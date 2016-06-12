@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+    <script>
+        var app = angular.module('myApp', ['ngMaterial']).controller('myController', function ($scope) {
+            //$scope.currentRelease = 16.416;
+            //$scope.pastRelease = 16.408;
+            $scope.currentView = 1;
+            $scope.pastView = 1;
+            $scope.today = new Date();
+            $scope.day = $scope.today.getDate();
+            $scope.month = $scope.today.getMonth() + 1;
+            $scope.year = $scope.today.getYear() - 100;
+            $scope.currentRelease = $scope.year + "." + String($scope.month) + String($scope.day - 1);
+            $scope.pastRelease = $scope.year + "." + String($scope.month) + String($scope.day - 2);
+
+
+            $scope.init = function () {
+                console.log($scope.urlObject);
+
+                if ($scope.day <= 9){
+                    $scope.day = "0" + $scope.day;
+                    //alert($scope.day);
+                }
+            };
+
+            $scope.urlObject = {
+                debug: {
+                    coma: {
+                        consumables: {
+                            dashboard: 'https://ort.ncats.nih.gov/CoMa/_layouts/ort/'+ $scope.currentRelease +'/debug/default.aspx#/coma/consumables',
+                            newForm: 'https://ort.ncats.nih.gov/CoMa/_layouts/ort/'+ $scope.currentRelease +'/debug/default.aspx#/coma/consumables/new',
+                            newFormHomepageURL: '',
+                            viewEditForm: 'https://ort.ncats.nih.gov/CoMa/_layouts/ort/'+ $scope.currentRelease +'/debug/default.aspx#/coma/consumables/view/'+ $scope.currentView,
+                            checkOut: '',
+                            locationCreator: ''
+                        },
+                        projects: {
+                            dashboard: 'https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/coma/projects',
+                            newForm: 'https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/coma/projects/new',
+                            viewEditForm: 'https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/coma/projects/view/{{currentView}}'
+                        },
+                        instruments: {
+                            dashboard: 'https://ort.ncats.nih.gov/coma/_layouts/ort/{{currentRelease}}/debug/default.aspx#/ort/instruments',
+                            newForm: 'https://ort.ncats.nih.gov/coma/_layouts/ort/{{currentRelease}}/debug/default.aspx#/ort/instruments/new',
+                            viewEditForm: 'https://ort.ncats.nih.gov/coma/_layouts/ort/{{currentRelease}}/debug/default.aspx#/ort/instruments/view/{{currentView}}'
+                        },
+                    },
+                    inventory: {
+                        consumables: {
+                            dashboard: 'https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/coma/consumables',
+                            newForm: 'https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/coma/consumables/new',
+                            viewEditForm: 'https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/coma/consumables/view/{{currentView}}',
+                            checkOut: '',
+                            locationCreator: ''
+                        }
+                    },
+                    instrumentation: {
+                        instruments: {
+                            dashboard: 'https://ort.ncats.nih.gov/instrumentation/_layouts/ort/{{currentRelease}}/debug/default.aspx#/ort/instruments',
+                            newForm: 'https://ort.ncats.nih.gov/inventory/_layouts/ort/{{currentRelease}}/debug/default.aspx#/inventory/consumables/new',
+                            newFormHomepageURL: '',
+                            viewEditForm: 'https://ort.ncats.nih.gov/instrumentation/_layouts/ort/{{currentRelease}}/debug/default.aspx#/acomm/instrument/view/{{currentView}}'
+                        }
+                    },
+                    rnai: {
+                        consumables: {
+                            dashboard: '',
+                            newForm: '',
+                            newFormHomepageURL: '',
+                            viewEditForm: '',
+                            checkOut: '',
+                            locationCreator: ''
+                        },
+                        projects: {
+                            dashboard: '',
+                            newForm: '',
+                            viewEditForm: ''
+                        },
+                        instruments: {
+                            dashboard: '',
+                            newForm: '',
+                            viewEditForm: ''
+                        },
+                        loi: {
+                            dashboard: 'N/A',
+                            newForm: 'https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/default.aspx#/rnai/intent/new',
+                            newFormHomepageURL: '',
+                            viewEditForm: 'https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/view/{{currentView}}'
+                        },
+                        fullapp: {
+                            dashboard: 'N/A',
+                            newForm: '',
+                            newFormHomepageURL: '',
+                            viewEditForm: ''
+                        }
+                    },
+                    stemcells: {
+                        consumables: {
+                            dashboard: '',
+                            newForm: '',
+                            newFormHomepageURL: '',
+                            viewEditForm: '',
+                            checkOut: '',
+                            locationCreator: ''
+                        },
+                        projects: {
+                            dashboard: '',
+                            newForm: '',
+                            viewEditForm: ''
+                        },
+                        instruments: {
+                            dashboard: '',
+                            newForm: '',
+                            viewEditForm: ''
+                        },
+                        loi: {
+                            dashboard: '',
+                            newForm: '',
+                            newFormHomepageURL: '',
+                            viewEditForm: ''
+                        },
+                        fullapp: {
+                            dashboard: '',
+                            newForm: '',
+                            newFormHomepageURL: '',
+                            viewEditForm: ''
+                        }
+                    },
+                    nfs: {
+                        application:{
+                            dashboard: '',
+                            viewEditForm: ''
+                        }
+                    }
+                },
+                min: {
+                    coma: {
+                        consumables: {
+                            dashboard: "test"
+                        }
+                    }
+                }
+            };
+
+            $scope.printURLS = function (i) {
+                window.open($scope.testObject.comaDashboard.debugCurrent);
+                window.open($scope.testObject.comaDashboard.debugLast);
+                alert($scope.testObject.comaDashboard.debugCurrent);
+            };
+        });
+    </script>
+    <style>
+        a {
+            padding-left: 2em;
+            padding-right: 2em;
+        }
+
+        h3 {
+            padding-left: 1em
+        }
+
+        .myTable td, .myTable a{
+            border: solid black 1px;
+            text-align: left;
+            padding-left: 0em;
+        }
+
+        .myTable {
+            padding-left: 1em;
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Release Helper</title>
+</head>
+<body data-ng-controller="myController" data-ng-init="init()">
+    <div style="padding: 50px;">
+        <div>
+            <input ng-model="currentRelease" placeholder="Release Version"> Current Release Version<br>
+            <input ng-model="currentView" placeholder="Item Number"> Item Number<br><br>
+            <h1>v{{currentRelease}} - Debug</h1>
+            <h2>CoMa</h2>
+                <h3>Consumables</h3>
+                    <table id="coma-consumables" class="myTable">
+                        <tr>
+                            <td>Dashboard</td><td><a href="{{urlObject.debug.coma.consumables.dashboard}}">{{urlObject.debug.coma.consumables.dashboard}}</a></td>
+                        </tr>
+                    </table>
+                    <p>{{urlObject.debug.coma.consumables.dashboard}}</p>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+    <script>
+        var app = angular.module('myApp', ['ngMaterial']).controller('myController', function ($scope) {
+            //$scope.currentRelease = 16.416;
+            //$scope.pastRelease = 16.408;
+            $scope.currentView = 1;
+            $scope.pastView = 1;
+            $scope.today = new Date();
+            $scope.day = $scope.today.getDate();
+            $scope.month = $scope.today.getMonth() + 1;
+            $scope.year = $scope.today.getYear() - 100;
+            $scope.currentRelease = $scope.year + "." + String($scope.month) + String($scope.day - 1);
+            $scope.pastRelease = $scope.year + "." + String($scope.month) + String($scope.day - 2);
+
+
+            $scope.testObject = {
+                comaDashboard:{
+                    debugCurrent:"https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/coma/consumables",
+                    debugLast:"https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{pastRelease}}/debug/default.aspx#/coma/consumables",
+                    minCurrent:"https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/default.aspx#/coma/consumables",
+                    minLast:"https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{pastRelease}}/default.aspx#/coma/consumables"
+                },
+                comaNewForm:{
+                    debugCurrent:"https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/coma/consumables/new",
+                    debugLast:"https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{pastRelease}}/debug/default.aspx#/coma/consumables/new",
+                    minCurrent:"https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/default.aspx#/coma/consumables/new",
+                    minLast:"https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{pastRelease}}/default.aspx#/coma/consumables/new"
+                }
+            };
+
+            $scope.printURLS = function (i) {
+                window.open($scope.testObject.comaDashboard.debugCurrent);
+                window.open($scope.testObject.comaDashboard.debugLast);
+                alert($scope.testObject.comaDashboard.debugCurrent);
+            };
+        });
+    </script>
+    <meta charset="UTF-8">
+    <title>Release Helper</title>
+</head>
+<body ng-controller="myController">
+<!-- <button ng-click="printURLS()">Click Me</button><br> -->
+<br>
+<div layout="row" style="padding: 55px;">
+    <div flex="50">
+        <input ng-model="currentRelease" placeholder="Release Version"> Current Release Version<br>
+        <input ng-model="currentView" placeholder="Item Number"> Item Number<br><br>
+        <h1>v{{currentRelease}} - Debug</h1>
+        <h1>CoMa Inventory</h1>
+        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/coma/consumables">CoMa Consumables - Dashboard</a><br>
+        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/coma/consumables/new">CoMa Consumables - New Form</a><br>
+        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/coma/consumables/view/{{currentView}}">CoMa Consumables - View/Edit Form</a><br>
+        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/coma/projects">CoMa Projects - Dashboard</a><br>
+        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/coma/projects/new">CoMa Projects - New Form</a><br>
+        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/coma/projects/view/{{currentView}}">CoMa Projects - View/Edit Form</a><br>
+        <a href="https://ort.ncats.nih.gov/coma/_layouts/ort/{{currentRelease}}/debug/default.aspx#/acomm/instruments">CoMa Instruments - Dashboard</a><br>
+        <a href="https://ort.ncats.nih.gov/coma/_layouts/ort/{{currentRelease}}/debug/default.aspx#/acomm/instruments/new">CoMa Instruments - New Form</a><br>
+        <a href="https://ort.ncats.nih.gov/coma/_layouts/ort/{{currentRelease}}/debug/default.aspx#/acomm/instruments/view/{{currentView}}">CoMa Instruments - View/Edit Form</a><br>
+        <h1>Inventory</h1>
+        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ort/{{currentRelease}}/debug/default.aspx#/inventory/allItem">Inventory - Dashboard</a><br>
+        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ort/{{currentRelease}}/debug/default.aspx#/inventory/consumables/new">Inventory - New Form</a><br>
+        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ort/{{currentRelease}}/debug/default.aspx#/inventory/consumables/view/{{currentView}}">Inventory - View/Edit Form</a><br>
+        <h1>Instrumentation</h1>
+        <a href="https://ort.ncats.nih.gov/instrumentation/_layouts/ort/{{currentRelease}}/debug/default.aspx#/acomm/instruments">Instrumentation - Dashboard</a><br>
+        <a href="https://ort.ncats.nih.gov/instrumentation/_layouts/ort/{{currentRelease}}/debug/default.aspx#/acomm/instrument/new">Instrumentation - New Form</a><br>
+        <a href="https://ort.ncats.nih.gov/instrumentation/_layouts/ort/{{currentRelease}}/debug/default.aspx#/acomm/instrument/view/{{currentView}}">Instrumentation - View/Edit Form</a>
+        <p>(Set "Item Number" to at least "133")</p>
+        <h1>RNAi</h1>
+        <a href="https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/new">RNAi - New LOI Form</a><br>
+        <a href="https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/view/{{currentView}}">RNAi - View/Edit LOI Form</a>
+    </div>
+    <div flex="50">
+        <input ng-model="pastRelease" placeholder="Release Version"> Past Release Version<br>
+        <input ng-model="pastView" placeholder="Item Number"> Item Number<br><br>
+        <h1>v{{pastRelease}} - Debug</h1>
+        <h1>CoMa Inventory</h1>
+        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{pastRelease}}/debug/default.aspx#/coma/consumables">CoMa Consumables - Dashboard</a><br>
+        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{pastRelease}}/debug/default.aspx#/coma/consumables/new">CoMa Consumables - New Form</a><br>
+        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{pastRelease}}/debug/default.aspx#/coma/consumables/view/{{pastView}}">CoMa Consumables - View/Edit Form</a><br>
+        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{pastRelease}}/debug/default.aspx#/coma/projects">CoMa Projects - Dashboard</a><br>
+        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{pastRelease}}/debug/default.aspx#/coma/projects/new">CoMa Projects - New Form</a><br>
+        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{pastRelease}}/debug/default.aspx#/coma/projects/view/{{pastView}}">CoMa Projects - View/Edit Form</a><br>
+        <a href="https://ort.ncats.nih.gov/coma/_layouts/ort/{{pastRelease}}/debug/default.aspx#/acomm/instruments">CoMa Instruments - Dashboard</a><br>
+        <a href="https://ort.ncats.nih.gov/coma/_layouts/ort/{{pastRelease}}/debug/default.aspx#/acomm/instruments/new">CoMa Instruments - New Form</a><br>
+        <a href="https://ort.ncats.nih.gov/coma/_layouts/ort/{{pastRelease}}/debug/default.aspx#/acomm/instruments/view/{{pastView}}">CoMa Instruments - View/Edit Form</a><br>
+        <h1>Inventory</h1>
+        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ort/{{pastRelease}}/debug/default.aspx#/inventory/allItem">Inventory - Dashboard</a><br>
+        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ort/{{pastRelease}}/debug/default.aspx#/inventory/consumables/new">Inventory - New Form</a><br>
+        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ort/{{pastRelease}}/debug/default.aspx#/inventory/consumables/view/{{pastView}}">Inventory - View/Edit Form</a><br>
+        <h1>Instrumentation</h1>
+        <a href="https://ort.ncats.nih.gov/instrumentation/_layouts/ort/{{pastRelease}}/debug/default.aspx#/acomm/instruments">Instrumentation - Dashboard</a><br>
+        <a href="https://ort.ncats.nih.gov/instrumentation/_layouts/ort/{{pastRelease}}/debug/default.aspx#/acomm/instrument/new">Instrumentation - New Form</a><br>
+        <a href="https://ort.ncats.nih.gov/instrumentation/_layouts/ort/{{pastRelease}}/debug/default.aspx#/acomm/instrument/view/{{pastView}}">Instrumentation - View/Edit Form</a>
+        <p>(Set "Item Number" to at least "133")</p>
+        <h1>RNAi</h1>
+        <a href="https://rnai.ncats.nih.gov/_layouts/ort/{{pastRelease}}/debug/default.aspx#/rnai/intent/new">RNAi - New LOI Form</a><br>
+        <a href="https://rnai.ncats.nih.gov/_layouts/ort/{{pastRelease}}/debug/default.aspx#/rnai/intent/view/{{pastView}}">RNAi - View/Edit LOI Form</a>
+    </div>
+</div>
+<hr>
+<div layout="row" style="padding: 55px;">
+    <div flex="50">
+        <input ng-model="currentRelease" placeholder="Release Version"> Current Release Version<br>
+        <input ng-model="currentView" placeholder="Item Number"> Item Number<br><br>
+        <h1>v{{currentRelease}}</h1>
+        <h1>CoMa Inventory</h1>
+        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/default.aspx#/coma/consumables">CoMa Consumables - Dashboard</a><br>
+        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/default.aspx#/coma/consumables/new">CoMa Consumables - New Form</a><br>
+        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/default.aspx#/coma/consumables/view/{{currentView}}">CoMa Consumables - View/Edit Form</a><br>
+        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/default.aspx#/coma/projects">CoMa Projects - Dashboard</a><br>
+        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/default.aspx#/coma/projects/new">CoMa Projects - New Form</a><br>
+        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/default.aspx#/coma/projects/view/{{currentView}}">CoMa Projects - View/Edit Form</a><br>
+        <a href="https://ort.ncats.nih.gov/coma/_layouts/ort/{{currentRelease}}/default.aspx#/acomm/instruments">CoMa Instruments - Dashboard</a><br>
+        <a href="https://ort.ncats.nih.gov/coma/_layouts/ort/{{currentRelease}}/default.aspx#/acomm/instruments/new">CoMa Instruments - New Form</a><br>
+        <a href="https://ort.ncats.nih.gov/coma/_layouts/ort/{{currentRelease}}/default.aspx#/acomm/instruments/view/{{currentView}}">CoMa Instruments - View/Edit Form</a><br>
+        <h1>Inventory</h1>
+        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ort/{{currentRelease}}/default.aspx#/inventory/allItem">Inventory - Dashboard</a><br>
+        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ort/{{currentRelease}}/default.aspx#/inventory/consumables/new">Inventory - New Form</a><br>
+        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ort/{{currentRelease}}/default.aspx#/inventory/consumables/view/{{currentView}}">Inventory - View/Edit Form</a><br>
+        <h1>Instrumentation</h1>
+        <a href="https://ort.ncats.nih.gov/instrumentation/_layouts/ort/{{currentRelease}}/default.aspx#/acomm/instruments">Instrumentation - Dashboard</a><br>
+        <a href="https://ort.ncats.nih.gov/instrumentation/_layouts/ort/{{currentRelease}}/default.aspx#/acomm/instrument/new">Instrumentation - New Form</a><br>
+        <a href="https://ort.ncats.nih.gov/instrumentation/_layouts/ort/{{currentRelease}}/default.aspx#/acomm/instrument/view/{{currentView}}">Instrumentation - View/Edit Form</a>
+        <p>(Set "Item Number" to at least "133")</p>
+        <h1>RNAi</h1>
+        <a href="https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/default.aspx#/rnai/intent/new">RNAi - New LOI Form</a><br>
+        <a href="https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/default.aspx#/rnai/intent/view/{{currentView}}">RNAi - View/Edit LOI Form</a>
+    </div>
+    <div flex="50">
+        <input ng-model="pastRelease" placeholder="Release Version"> Past Release Version<br>
+        <input ng-model="pastView" placeholder="Item Number"> Item Number<br><br>
+        <h1>v{{pastRelease}}</h1>
+        <h1>CoMa Inventory</h1>
+        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{pastRelease}}/default.aspx#/coma/consumables">CoMa Consumables - Dashboard</a><br>
+        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{pastRelease}}/default.aspx#/coma/consumables/new">CoMa Consumables - New Form</a><br>
+        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{pastRelease}}/default.aspx#/coma/consumables/view/{{pastView}}">CoMa Consumables - View/Edit Form</a><br>
+        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{pastRelease}}/default.aspx#/coma/projects">CoMa Projects - Dashboard</a><br>
+        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{pastRelease}}/default.aspx#/coma/projects/new">CoMa Projects - New Form</a><br>
+        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{pastRelease}}/default.aspx#/coma/projects/view/{{pastView}}">CoMa Projects - View/Edit Form</a><br>
+        <a href="https://ort.ncats.nih.gov/coma/_layouts/ort/{{pastRelease}}/default.aspx#/acomm/instruments">CoMa Instruments - Dashboard</a><br>
+        <a href="https://ort.ncats.nih.gov/coma/_layouts/ort/{{pastRelease}}/default.aspx#/acomm/instruments/new">CoMa Instruments - New Form</a><br>
+        <a href="https://ort.ncats.nih.gov/coma/_layouts/ort/{{pastRelease}}/default.aspx#/acomm/instruments/view/{{pastView}}">CoMa Instruments - View/Edit Form</a><br>
+        <h1>Inventory</h1>
+        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ort/{{pastRelease}}/default.aspx#/inventory/allItem">Inventory - Dashboard</a><br>
+        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ort/{{pastRelease}}/default.aspx#/inventory/consumables/new">Inventory - New Form</a><br>
+        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ort/{{pastRelease}}/default.aspx#/inventory/consumables/view/{{pastView}}">Inventory - View/Edit Form</a><br>
+        <h1>Instrumentation</h1>
+        <a href="https://ort.ncats.nih.gov/instrumentation/_layouts/ort/{{pastRelease}}/default.aspx#/acomm/instruments">Instrumentation - Dashboard</a><br>
+        <a href="https://ort.ncats.nih.gov/instrumentation/_layouts/ort/{{pastRelease}}/default.aspx#/acomm/instrument/new">Instrumentation - New Form</a><br>
+        <a href="https://ort.ncats.nih.gov/instrumentation/_layouts/ort/{{pastRelease}}/default.aspx#/acomm/instrument/view/{{pastView}}">Instrumentation - View/Edit Form</a>
+        <p>(Set "Item Number" to at least "133")</p>
+        <h1>RNAi</h1>
+        <a href="https://rnai.ncats.nih.gov/_layouts/ort/{{pastRelease}}/default.aspx#/rnai/intent/new">RNAi - New LOI Form</a><br>
+        <a href="https://rnai.ncats.nih.gov/_layouts/ort/{{pastRelease}}/default.aspx#/rnai/intent/view/{{pastView}}">RNAi - View/Edit LOI Form</a>
+    </div>
+</div>
+
+
+</body>
+</html>
+Edit in Text Editor  Edit in HTML Editor  Cancel Submit
+Copyright © 1999 - 2015 GoDaddy Operating Company, LLC. All Rights Reserved.
