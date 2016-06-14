@@ -169,7 +169,7 @@
         }
 
         .myTable td, .myTable a{
-            border: solid black 1px;
+            /* border: solid black 1px; */
             text-align: left;
             padding-left: 0em;
         }
@@ -188,14 +188,30 @@
             <input ng-model="currentRelease" placeholder="Release Version"> Current Release Version<br>
             <input ng-model="currentView" placeholder="Item Number"> Item Number<br><br>
             <h1>v{{currentRelease}} - Debug</h1>
-            <h2>CoMa</h2>
-                <h3>Consumables</h3>
-                    <table id="coma-consumables" class="myTable">
-                        <tr>
-                            <td>Dashboard</td><td><a href="{{urlObject.debug.coma.consumables.dashboard}}">{{urlObject.debug.coma.consumables.dashboard}}</a></td>
-                        </tr>
-                    </table>
-                    <p>{{urlObject.debug.coma.consumables.dashboard}}</p>
+            <h3 class="myHeader">CoMa</h3>
+                <table id="coma-consumables" class="myTable">
+                    <tr>
+                        <td>Consumables Dashboard</td>
+                        <td>
+                            <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/coma/consumables">
+                                https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/coma/consumables</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Projects Dashboard</td>
+                        <td>
+                            <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/facility/projects">
+                                https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/facility/projects</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Projects Dashboard</td>
+                        <td>
+                            <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/facility/projects">
+                                https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/facility/projects</a>
+                        </td>
+                    </tr>
+                </table>
         </div>
 
     </div>
