@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+    <script>
+        var app = angular.module('myApp', ['ngMaterial']).controller('myController', function ($scope) {
+            //$scope.currentRelease = 16.416;
+            //$scope.pastRelease = 16.408;
+            $scope.currentView = 1;
+            $scope.pastView = 1;
+            $scope.today = new Date();
+            $scope.day = $scope.today.getDate();
+            $scope.month = $scope.today.getMonth() + 1;
+            $scope.year = $scope.today.getYear() - 100;
+            $scope.currentRelease = $scope.year + "." + String($scope.month) + String($scope.day - 1);
+            $scope.pastRelease = $scope.year + "." + String($scope.month) + String($scope.day - 2);
+
+
+            $scope.init = function () {
+                console.log($scope.urlObject);
+
+                if ($scope.day <= 9){
+                    $scope.day = "0" + $scope.day;
+                    //alert($scope.day);
+                }
+            };
+
+
+            $scope.printURLS = function (i) {
+                window.open($scope.testObject.comaDashboard.debugCurrent);
+                window.open($scope.testObject.comaDashboard.debugLast);
+                alert($scope.testObject.comaDashboard.debugCurrent);
+            };
+        });
+    </script>
+    <style>
+        a {
+            padding-left: 2em;
+            padding-right: 2em;
+        }
+
+        h3 {
+            padding-left: 1em
+        }
+
+        .myTable td, .myTable a{
+            /* border: solid black 1px;*/
+            text-align: left;
+            padding-left: 0em;
+            padding-right: 2em;
+
+        }
+
+        .myTable {
+            padding-left: 1em;
+        }
+
+        th {
+            text-align: left;
+        }
+
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Release Helper</title>
+</head>
+<body data-ng-controller="myController" data-ng-init="init()">
+    <div style="padding: 55px;">
+        <h1>Update Pages</h1>
+        <input ng-model="currentRelease" placeholder="Release Version"> Current Release Version<br>
+        <h3>NFS</h3>
+        <table class="myTable">
+            <th>Name</th><th>URL</th><th>Route</th>
+            <tr>
+                <td>NFS App</td>
+                <td><a href="https://nfs.ncats.nih.gov/Pages/Applications.aspx">https://nfs.ncats.nih.gov/Pages/Applications.aspx</a></td>
+                <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/nfs/fund</td>
+            </tr>
+            <tr>
+                <td>NFS Edit Form</td>
+                <td><a href="https://nfs.ncats.nih.gov/Lists/Applications/editform.aspx">https://nfs.ncats.nih.gov/Lists/Applications/editform.aspx</a> </td>
+                <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/nfs/fund/view/0</td>
+            </tr>
+            <tr>
+                <td>NFS Display Form</td>
+                <td><a href="https://nfs.ncats.nih.gov/Lists/Applications/dispform.aspx">https://nfs.ncats.nih.gov/Lists/Applications/dispform.aspx</a> </td>
+                <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/nfs/fund/view/0</td>
+            </tr>
+        </table>
+        <h3>CoMA</h3>
+        <table class="myTable">
+            <th>Name</th><th>URL</th><th>Route</th>
+            <tr>
+                <td>Consumables Dashboard</td>
+                <td><a href="https://ort.ncats.nih.gov/CoMa/Pages/Consumables.aspx">https://ort.ncats.nih.gov/CoMa/Pages/Consumables.aspx</a> </td>
+                <td>NEEDED</td>
+            </tr>
+            <tr>
+                <td>Projects Dashboard</td>
+                <td><a href="https://ort.ncats.nih.gov/CoMa/Pages/Projects.aspx">https://ort.ncats.nih.gov/CoMa/Pages/Projects.aspx</a> </td>
+                <td>NEEDED</td>
+            </tr>
+            <tr>
+                <td>Projects New Form</td>
+                <td><a href="https://ort.ncats.nih.gov/CoMa/Pages/NewProject.aspx">https://ort.ncats.nih.gov/CoMa/Pages/NewProject.aspx</a> </td>
+                <td>NEEDED</td>
+            </tr>
+            <tr>
+                <td>Instruments Dashboard</td>
+                <td><a href="https://ort.ncats.nih.gov/CoMa/Pages/Instruments.aspx">https://ort.ncats.nih.gov/CoMa/Pages/Instruments.aspx</a> </td>
+                <td>NEEDED</td>
+            </tr>
+            <tr>
+                <td>Check In & Out</td>
+                <td><a href="https://ort.ncats.nih.gov/CoMa/Pages/CheckInOut.aspx">https://ort.ncats.nih.gov/CoMa/Pages/CheckInOut.aspx</a> </td>
+                <td>NEEDED</td>
+            </tr>
+            <tr>
+                <td>Location Creator</td>
+                <td><a href="https://ort.ncats.nih.gov/CoMa/Pages/LocationCreator.aspx">https://ort.ncats.nih.gov/CoMa/Pages/LocationCreator.aspx</a> </td>
+                <td>NEEDED</td>
+            </tr>
+        </table>
+        <h3>Inventory</h3>
+        <table class="myTable">
+            <th>Name</th><th>URL</th><th>Route</th>
+            <tr>
+                <td>Consumables Dashboard</td>
+                <td><a href="https://ort.ncats.nih.gov/inventory/Pages/Consumables.aspx">https://ort.ncats.nih.gov/inventory/Pages/Consumables.aspx</a> </td>
+                <td>NEEDED</td>
+            </tr>
+            <tr>
+                <td>Check In & Out</td>
+                <td><a href="https://ort.ncats.nih.gov/inventory/Pages/CheckInOut.aspx ">https://ort.ncats.nih.gov/inventory/Pages/CheckInOut.aspx</a> </td>
+                <td>NEEDED</td>
+            </tr>
+            <tr>
+                <td>Location Creator</td>
+                <td><a href="https://ort.ncats.nih.gov/inventory/Pages/LocationCreator.aspx ">https://ort.ncats.nih.gov/inventory/Pages/LocationCreator.aspx </a> </td>
+                <td>NEEDED</td>
+            </tr>
+        </table>
+        <h3>Instrumentation</h3>
+        <table class="myTable">
+            <th>Name</th><th>URL</th><th>Route</th>
+            <tr>
+                <td>Instruments Dashboard</td>
+                <td><a href="https://ort.ncats.nih.gov/instrumentation/Pages/Instruments.aspx">https://ort.ncats.nih.gov/instrumentation/Pages/Instruments.aspx</a> </td>
+                <td>NEEDED</td>
+            </tr>
+            <tr>
+                <td>New Instrument Form</td>
+                <td><a href="https://ort.ncats.nih.gov/instrumentation/Pages/NewInstrument.aspx ">https://ort.ncats.nih.gov/instrumentation/Pages/NewInstrument.aspx</a> </td>
+                <td>NEEDED</td>
+            </tr>
+        </table>
+        </table>
+        <h3>RNAi</h3>
+        <table class="myTable" id="rnaiTable">
+            <th>Name</th><th>URL</th><th>Route</th>
+            <tr>
+                <td>LOI - New Form</td>
+                <td><a href="https://rnai.ncats.nih.gov/Lists/IntentFormApp/newform.aspx">https://rnai.ncats.nih.gov/Lists/IntentFormApp/newform.aspx</a> </td>
+                <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/new</td>
+            </tr>
+            <tr>
+                <td>LOI - Edit Form</td>
+                <td><a href="https://rnai.ncats.nih.gov/Lists/IntentFormApp/editform.aspx">https://rnai.ncats.nih.gov/Lists/IntentFormApp/editform.aspx</a> </td>
+                <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/view/0</td>
+            </tr>
+            <tr>
+                <td>LOI - Display Form</td>
+                <td><a href="https://rnai.ncats.nih.gov/Lists/IntentFormApp/dispform.aspx">https://rnai.ncats.nih.gov/Lists/IntentFormApp/dispform.aspx</a> </td>
+                <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/view/0</td>
+            </tr>
+            <tr>
+                <td>Full App - Edit Form</td>
+                <td><a href="https://rnai.ncats.nih.gov/Lists/fullapplication/editform.aspx">https://rnai.ncats.nih.gov/Lists/fullapplication/editform.aspx</a> </td>
+                <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/fullapplication/view/0</td>
+            </tr>
+            <tr>
+                <td>Full App - Display Form</td>
+                <td><a href="https://rnai.ncats.nih.gov/Lists/fullapplication/dispform.aspx">https://rnai.ncats.nih.gov/Lists/fullapplication/dispform.aspx</a> </td>
+                <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/fullapplication/view/0</td>
+            </tr>
+            <tr>
+                <td style="width: 500px">New Form Homepage Link</td>
+                <td><a href="https://rnai.ncats.nih.gov/SitePages/Submit%20a%20New%20Letter%20of%20Intent.aspx"></a>https://rnai.ncats.nih.gov/SitePages/Submit%20a%20New%20Letter%20of%20Intent.aspx</td>
+                <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/new</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href=""></a></td>
+                <td></td>
+            </tr>
+    </div>
+</body>
