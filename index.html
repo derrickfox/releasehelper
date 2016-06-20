@@ -10,7 +10,7 @@
     <!-- Angular Material Library -->
     <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
     <script>
-        var app = angular.module('myApp', ['ngMaterial']).controller('myController', function ($scope) {
+        var app = angular.module('myApp', ['ngMaterial', 'ngMessages']).controller('myController', function ($scope) {
             //$scope.currentRelease = 16.416;
             //$scope.pastRelease = 16.408;
             $scope.currentView = 1;
@@ -66,9 +66,14 @@
 </head>
 <body data-ng-controller="myController" data-ng-init="init()">
     <div style="padding: 55px;">
-        <div>
+        <div style="display: inline-block;">
             <input ng-model="currentRelease" placeholder="Release Version"> Current Release Version<br>
             <input ng-model="currentView" placeholder="Item Number"> Item Number<br><br>
+        </div>
+        <div style="display: inline-block; float: right;">
+            <a href="updatePages.html"><md-button class="md-raised">To Update Pages</md-button></a>
+        </div>
+        <div>
             <h1>v{{currentRelease}} - Debug</h1>
             <h3 class="myHeader">NFS</h3>
             <table id="NFStable" class="myTable">

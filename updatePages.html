@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
 <head>
+    <!-- Bootstrap
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    -->
+
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
@@ -10,7 +16,7 @@
     <!-- Angular Material Library -->
     <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
     <script>
-        var app = angular.module('myApp', ['ngMaterial']).controller('myController', function ($scope) {
+        var app = angular.module('myApp', ['ngMaterial', 'ngMessages']).controller('myController', function ($scope) {
             //$scope.currentRelease = 16.416;
             //$scope.pastRelease = 16.408;
             $scope.currentView = 1;
@@ -41,10 +47,6 @@
         });
     </script>
     <style>
-        a {
-            padding-left: 2em;
-            padding-right: 2em;
-        }
 
         h3 {
             padding-left: 1em
@@ -66,6 +68,10 @@
             text-align: left;
         }
 
+        #longCell td{
+            width: 5px;
+        }
+
 
     </style>
     <meta charset="UTF-8">
@@ -73,7 +79,13 @@
 </head>
 <body data-ng-controller="myController" data-ng-init="init()">
     <div style="padding: 55px;">
-        <h1>Update Pages</h1>
+        <div style="display: inline-block;">
+            <h1>Update Pages</h1>
+        </div>
+        <div style="display: inline-block; float: right;">
+            <a href="index.html"><md-button class="md-raised">To Test Page</md-button></a>
+        </div>
+        <br>
         <input ng-model="currentRelease" placeholder="Release Version"> Current Release Version<br>
         <h3>NFS</h3>
         <table class="myTable">
@@ -166,39 +178,153 @@
         <table class="myTable" id="rnaiTable">
             <th>Name</th><th>URL</th><th>Route</th>
             <tr>
-                <td>LOI - New Form</td>
+                <td id="longCell">LOI New Form</td>
                 <td><a href="https://rnai.ncats.nih.gov/Lists/IntentFormApp/newform.aspx">https://rnai.ncats.nih.gov/Lists/IntentFormApp/newform.aspx</a> </td>
                 <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/new</td>
             </tr>
             <tr>
-                <td>LOI - Edit Form</td>
+                <td id="longCell">LOI Edit Form</td>
                 <td><a href="https://rnai.ncats.nih.gov/Lists/IntentFormApp/editform.aspx">https://rnai.ncats.nih.gov/Lists/IntentFormApp/editform.aspx</a> </td>
                 <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/view/0</td>
             </tr>
             <tr>
-                <td>LOI - Display Form</td>
+                <td id="longCell">LOI Display Form</td>
                 <td><a href="https://rnai.ncats.nih.gov/Lists/IntentFormApp/dispform.aspx">https://rnai.ncats.nih.gov/Lists/IntentFormApp/dispform.aspx</a> </td>
                 <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/view/0</td>
             </tr>
             <tr>
-                <td>Full App - Edit Form</td>
+                <td id="longCell">Full App Edit Form</td>
                 <td><a href="https://rnai.ncats.nih.gov/Lists/fullapplication/editform.aspx">https://rnai.ncats.nih.gov/Lists/fullapplication/editform.aspx</a> </td>
                 <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/fullapplication/view/0</td>
             </tr>
             <tr>
-                <td>Full App - Display Form</td>
+                <td id="longCell">Full App Display Form</td>
                 <td><a href="https://rnai.ncats.nih.gov/Lists/fullapplication/dispform.aspx">https://rnai.ncats.nih.gov/Lists/fullapplication/dispform.aspx</a> </td>
                 <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/fullapplication/view/0</td>
             </tr>
             <tr>
-                <td style="width: 500px">New Form Homepage Link</td>
-                <td><a href="https://rnai.ncats.nih.gov/SitePages/Submit%20a%20New%20Letter%20of%20Intent.aspx"></a>https://rnai.ncats.nih.gov/SitePages/Submit%20a%20New%20Letter%20of%20Intent.aspx</td>
+                <td id="longCell" nowrap="">New Form Homepage Link</td>
+                <td><a href="https://rnai.ncats.nih.gov/SitePages/Submit%20a%20New%20Letter%20of%20Intent.aspx">https://rnai.ncats.nih.gov/SitePages/Submit%20a%20New%20Letter%20of%20Intent.aspx</a></td>
                 <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/new</td>
             </tr>
             <tr>
-                <td></td>
-                <td><a href=""></a></td>
-                <td></td>
+                <td id="longCell">Consumables Dashboard</td>
+                <td><a href="https://rnai.ncats.nih.gov/Pages/Consumables.aspx">https://rnai.ncats.nih.gov/Pages/Consumables.aspx</a></td>
+                <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/consumables</td>
             </tr>
+            <tr>
+                <td id="longCell">Projects Dashboard</td>
+                <td><a href="https://rnai.ncats.nih.gov/Pages/Projects.aspx">https://rnai.ncats.nih.gov/Pages/Projects.aspx</a></td>
+                <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/projects</td>
+            </tr>
+            <tr>
+                <td id="longCell">Instruments Dashboard</td>
+                <td><a href="https://rnai.ncats.nih.gov/Pages/Instruments.aspx">https://rnai.ncats.nih.gov/Pages/Instruments.aspx</a></td>
+                <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/ort/instruments</td>
+            </tr>
+            <tr>
+                <td id="longCell">Freezers Dashboard</td>
+                <td><a href="https://rnai.ncats.nih.gov/Pages/Freezers.aspx">https://rnai.ncats.nih.gov/Pages/Freezers.aspx</a></td>
+                <td>/_layouts/ls/{{currentRelease}}/default.aspx#/osctr/freezers</td>
+            </tr>
+            <tr>
+                <td>Samples Dashboard</td>
+                <td><a href="https://rnai.ncats.nih.gov/Pages/Sample.aspx">https://rnai.ncats.nih.gov/Pages/Sample.aspx</a> </td>
+                <td>/_layouts/ls/{{currentRelease}}/default.aspx#/osctr/donors</td>
+            </tr>
+            <tr>
+                <td>Location Creator</td>
+                <td><a href="">NEEDED</a> </td>
+                <td>NEEDED</td>
+            </tr>
+            <tr>
+                <td>Check In & Out</td>
+                <td><a href="">NEEDED</a> </td>
+                <td>NEEDED</td>
+            </tr>
+        </table>
+        <h3>Stemcells</h3>
+        <table class="myTable" id="stemcellsTable">
+            <th>Name</th><th>URL</th><th>Route</th>
+            <tr>
+                <td id="longCell">LOI New Form</td>
+                <td><a href="https://stemcells.ncats.nih.gov/Lists/IntentFormApp/newform.aspx">https://rnai.ncats.nih.gov/Lists/IntentFormApp/newform.aspx</a> </td>
+                <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/new</td>
+            </tr>
+            <tr>
+                <td id="longCell">LOI Edit Form</td>
+                <td><a href="https://stemcells.ncats.nih.gov/Lists/IntentFormApp/editform.aspx">https://rnai.ncats.nih.gov/Lists/IntentFormApp/editform.aspx</a> </td>
+                <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/view/0</td>
+            </tr>
+            <tr>
+                <td id="longCell">LOI Display Form</td>
+                <td><a href="https://stemcells.ncats.nih.gov/Lists/IntentFormApp/dispform.aspx">https://rnai.ncats.nih.gov/Lists/IntentFormApp/dispform.aspx</a> </td>
+                <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/view/0</td>
+            </tr>
+            <tr>
+                <td id="longCell">Full App Edit Form</td>
+                <td><a href="https://stemcells.ncats.nih.gov/Lists/fullapplication/editform.aspx">https://rnai.ncats.nih.gov/Lists/fullapplication/editform.aspx</a> </td>
+                <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/fullapplication/view/0</td>
+            </tr>
+            <tr>
+                <td id="longCell">Full App Display Form</td>
+                <td><a href="https://stemcells.ncats.nih.gov/Lists/fullapplication/dispform.aspx">https://rnai.ncats.nih.gov/Lists/fullapplication/dispform.aspx</a> </td>
+                <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/fullapplication/view/0</td>
+            </tr>
+            <tr>
+                <td id="longCell" nowrap="">New Form Homepage Link</td>
+                <td><a href="https://stemcells.ncats.nih.gov/SitePages/Submit%20a%20New%20Letter%20of%20Intent.aspx">https://rnai.ncats.nih.gov/SitePages/Submit%20a%20New%20Letter%20of%20Intent.aspx</a></td>
+                <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/new</td>
+            </tr>
+            <tr>
+                <td id="longCell">Consumables Dashboard</td>
+                <td><a href="https://stemcells.ncats.nih.gov/Pages/Consumables.aspx">https://rnai.ncats.nih.gov/Pages/Consumables.aspx</a></td>
+                <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/consumables</td>
+            </tr>
+            <tr>
+                <td id="longCell">Projects Dashboard</td>
+                <td><a href="https://stemcells.ncats.nih.gov/Pages/Projects.aspx">https://rnai.ncats.nih.gov/Pages/Projects.aspx</a></td>
+                <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/projects</td>
+            </tr>
+            <tr>
+                <td id="longCell">Instruments Dashboard</td>
+                <td><a href="https://stemcells.ncats.nih.gov/Pages/Instruments.aspx">https://rnai.ncats.nih.gov/Pages/Instruments.aspx</a></td>
+                <td>/_layouts/ort/{{currentRelease}}/debug/default.aspx#/ort/instruments</td>
+            </tr>
+            <tr>
+                <td id="longCell">Freezers Dashboard</td>
+                <td><a href="https://stemcells.ncats.nih.gov/Pages/Freezers.aspx">https://rnai.ncats.nih.gov/Pages/Freezers.aspx</a></td>
+                <td>/_layouts/ls/{{currentRelease}}/default.aspx#/osctr/freezers</td>
+            </tr>
+            <tr>
+                <td>Samples Dashboard</td>
+                <td><a href="https://stemcells.ncats.nih.gov/Pages/Sample.aspx">https://rnai.ncats.nih.gov/Pages/Sample.aspx</a> </td>
+                <td>/_layouts/ls/{{currentRelease}}/default.aspx#/osctr/donors</td>
+            </tr>
+            <tr>
+                <td>Location Creator</td>
+                <td><a href="">NEEDED</a> </td>
+                <td>NEEDED</td>
+            </tr>
+            <tr>
+                <td>Check In & Out</td>
+                <td><a href="">NEEDED</a> </td>
+                <td>NEEDED</td>
+            </tr>
+        </table>
+        <h3>OSCTR</h3>
+        <table class="myTable" id="osctrTable">
+            <th>Name</th><th>URL</th><th>Route</th>
+            <tr>
+                <td id="longCell">Donors</td>
+                <td><a href="https://labshare.nih.gov/nei/osctr/Pages/Samples.aspx">https://labshare.nih.gov/nei/osctr/Pages/Samples.aspx</a> </td>
+                <td>/nei/osctr/_layouts/ls/{{currentRelease}}/default.aspx#/osctr/donors</td>
+            </tr>
+            <tr>
+                <td>Freezers</td>
+                <td><a href="https://labshare.nih.gov/nei/osctr/Pages/Inventory.aspx">https://labshare.nih.gov/nei/osctr/Pages/Inventory.aspx</a> </td>
+                <td>/nei/osctr/_layouts/ls/{{currentRelease}}/default.aspx#/osctr/derivatives/manage</td>
+            </tr>
+        </table>
     </div>
 </body>
