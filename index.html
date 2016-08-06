@@ -75,7 +75,7 @@
         </div>
         <div>
             <h1>v{{currentRelease}} - Debug</h1>
-            <h3 class="myHeader">NFS</h3>
+            <h3 class="myHeader" id="testMe">NFS</h3>
             <table id="NFStable" class="myTable">
                 <tr>
                     <td>NFS Dashboard</td>
@@ -89,22 +89,22 @@
                 <tr>
                     <td>Consumables Dashboard</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/coma/consumables">
-                            https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/coma/consumables</a>
+                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/consumables/dashboard/myConsumables">
+                            https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/consumables/dashboard/myConsumables</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Projects Dashboard</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/facility/projects">
-                            https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/facility/projects</a>
+                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/projects/dashboard/myProjects">
+                            https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/projects/dashboard/myProjects</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Instruments Dashboard</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/ort/instruments">
-                            https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/ort/instruments</a>
+                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/instruments/myInstruments">
+                            https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/instruments/myInstruments</a>
                     </td>
                 </tr>
                 <tr>
@@ -125,8 +125,8 @@
                 <tr>
                     <td>Consumables Dashboard</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ort/{{currentRelease}}/debug/default.aspx#/inventory/allItem">
-                            https://ort.ncats.nih.gov/inventory/_layouts/ort/{{currentRelease}}/debug/default.aspx#/inventory/allItem</a>
+                        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/consumables/dashboard/myConsumables">
+                            https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/consumables/dashboard/myConsumables</a>
                     </td>
                 </tr>
             </table>
@@ -135,29 +135,29 @@
                 <tr>
                     <td>Instruments Dashboard</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/instrumentation/_layouts/ort/{{currentRelease}}/debug/default.aspx#/ort/instruments">
-                            https://ort.ncats.nih.gov/instrumentation/_layouts/ort/{{currentRelease}}/debug/default.aspx#/ort/instruments</a>
+                        <a href="https://ort.ncats.nih.gov/instrumentation/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/instruments/dashboard/myInstruments">
+                            https://ort.ncats.nih.gov/instrumentation/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/instruments/dashboard/myInstruments</a>
                     </td>
                 </tr>
             </table>
             <h3 class="myHeader">RNAi</h3>
             <table id="RNAiTable" class="myTable">
                 <tr>
-                    <td>New Letter of Intent</td>
+                    <td>New Letter of Intent - **GET NEW**</td> <!-- TODO Get new UI Route -->
                     <td>
-                        <a href="https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/new">
+                        <a href="https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/rnai/intent/new">
                             https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/new</a>
                     </td>
                 </tr>
                 <tr>
-                    <td>View/Edit Letter of Intent</td>
+                    <td>View/Edit Letter of Intent - **GET NEW**</td> <!-- TODO Get new UI Route -->
                     <td>
                         <a href="https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/view/{{currentView}}">
                             https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/view/{{currentView}}</a>
                     </td>
                 </tr>
                 <tr>
-                    <td>View/Edit Full Application</td>
+                    <td>View/Edit Full Application - **GET NEW**</td> <!-- TODO Get new UI Route -->
                     <td>
                         <a href="https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/fullapplication/view/{{currentView}}">
                             https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/fullapplication/view/{{currentView}}</a>
@@ -166,22 +166,22 @@
                 <tr>
                     <td>Consumables Dashboard</td>
                     <td>
-                        <a href="https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/consumables">
-                            https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/consumables</a>
+                        <a href="https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/consumables/dashboard/myConsumables">
+                            https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/consumables/dashboard/myConsumables</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Projects Dashboard</td>
                     <td>
-                        <a href="https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/facility/projects">
-                            https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/facility/projects</a>
+                        <a href="https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/projects/dashboard/myProjects">
+                            https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/projects/dashboard/myProjects</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Instruments Dashboard</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/ort/instruments">
-                            https://ort.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/ort/instruments</a>
+                        <a href="https://ort.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/instruments/dashboard/myInstruments">
+                            https://ort.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/instruments/dashboard/myInstruments</a>
                     </td>
                 </tr>
                 <tr>
@@ -200,21 +200,21 @@
             <h3 class="myHeader">Stemcells</h3>
             <table id="StemcellsTable" class="myTable">
                 <tr>
-                    <td>New Letter of Intent</td>
+                    <td>New Letter of Intent - **GET NEW**</td> <!-- TODO Get new UI Route -->
                     <td>
                         <a href="https://stemcells.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/new">
                             https://stemcells.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/new</a>
                     </td>
                 </tr>
                 <tr>
-                    <td>View/Edit Letter of Intent</td>
+                    <td>View/Edit Letter of Intent - **GET NEW**</td> <!-- TODO Get new UI Route -->
                     <td>
                         <a href="https://stemcells.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/view/{{currentView}}">
                             https://stemcells.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/view/{{currentView}}</a>
                     </td>
                 </tr>
                 <tr>
-                    <td>View/Edit Full Application</td>
+                    <td>View/Edit Full Application - **GET NEW**</td> <!-- TODO Get new UI Route -->
                     <td>
                         <a href="https://stemcells.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/fullapplication/view/{{currentView}}">
                             https://stemcells.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/fullapplication/view/{{currentView}}</a>
@@ -223,22 +223,22 @@
                 <tr>
                     <td>Consumables Dashboard</td>
                     <td>
-                        <a href="https://stemcells.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/consumables">
-                            https://stemcells.ncats.nih.gov//_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/consumables</a>
+                        <a href="https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/consumables/dashboard/myConsumables">
+                            https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/consumables/dashboard/myConsumables</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Projects Dashboard</td>
                     <td>
-                        <a href="https://stemcells.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/facility/projects">
-                            https://stemcells.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/facility/projects</a>
+                        <a href="https://stemcells.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/projects/dashboard/myProjects">
+                            https://stemcells.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/projects/dashboard/myProjects</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Instruments Dashboard</td>
                     <td>
-                        <a href="https://stemcells.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/ort/instruments">
-                            https://stemcells.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/ort/instruments</a>
+                        <a href="https://stemcells.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/instruments/dashboard/myInstruments">
+                            https://stemcells.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/instruments/dashboard/myInstruments</a>
                     </td>
                 </tr>
                 <tr>
@@ -289,22 +289,22 @@
                 <tr>
                     <td>Consumables Dashboard</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/default.aspx#/coma/consumables">
-                            https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/default.aspx#/coma/consumables</a>
+                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/consumables/dashboard/myConsumables">
+                            https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/consumables/dashboard/myConsumables</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Projects Dashboard</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/default.aspx#/facility/projects">
-                            https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/default.aspx#/facility/projects</a>
+                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/projects/dashboard/myProjects">
+                            https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/projects/dashboard/myProjects</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Instruments Dashboard</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/default.aspx#/ort/instruments">
-                            https://ort.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/default.aspx#/ort/instruments</a>
+                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/instruments/dashboard/myInstruments">
+                            https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/instruments/dashboard/myInstruments</a>
                     </td>
                 </tr>
                 <tr>
@@ -325,8 +325,8 @@
                 <tr>
                     <td>Consumables Dashboard</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ort/{{currentRelease}}/default.aspx#/inventory/allItem">
-                            https://ort.ncats.nih.gov/inventory/_layouts/ort/{{currentRelease}}/default.aspx#/inventory/allItem</a>
+                        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/consumables/dashboard/myConsumables">
+                            https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/consumables/dashboard/myConsumables</a>
                     </td>
                 </tr>
             </table>
@@ -335,29 +335,29 @@
                 <tr>
                     <td>Instruments Dashboard</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/instrumentation/_layouts/ort/{{currentRelease}}/default.aspx#/ort/instruments">
-                            https://ort.ncats.nih.gov/instrumentation/_layouts/ort/{{currentRelease}}/default.aspx#/ort/instruments</a>
+                        <a href="https://ort.ncats.nih.gov/instrumentation/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/instruments/dashboard/myInstruments">
+                            https://ort.ncats.nih.gov/instrumentation/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/instruments/dashboard/myInstruments</a>
                     </td>
                 </tr>
             </table>
             <h3 class="myHeader">RNAi</h3>
             <table id="RNAiTable" class="myTable">
                 <tr>
-                    <td>New Letter of Intent</td>
+                    <td>New Letter of Intent - **GET NEW**</td> <!-- TODO Get new UI Route -->
                     <td>
                         <a href="https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/default.aspx#/rnai/intent/new">
                             https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/default.aspx#/rnai/intent/new</a>
                     </td>
                 </tr>
                 <tr>
-                    <td>View/Edit Letter of Intent</td>
+                    <td>View/Edit Letter of Intent - **GET NEW**</td> <!-- TODO Get new UI Route -->
                     <td>
                         <a href="https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/default.aspx#/rnai/intent/view/{{currentView}}">
                             https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/default.aspx#/rnai/intent/view/{{currentView}}</a>
                     </td>
                 </tr>
                 <tr>
-                    <td>View/Edit Full Application</td>
+                    <td>View/Edit Full Application - **GET NEW**</td> <!-- TODO Get new UI Route -->
                     <td>
                         <a href="https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/default.aspx#/rnai/fullapplication/view/{{currentView}}">
                             https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/default.aspx#/rnai/fullapplication/view/{{currentView}}</a>
@@ -366,22 +366,22 @@
                 <tr>
                     <td>Consumables Dashboard</td>
                     <td>
-                        <a href="https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/default.aspx#/rnai/consumables">
-                            https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/default.aspx#/rnai/consumables</a>
+                        <a href="https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/consumables/dashboard/myConsumables">
+                            https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/consumables/dashboard/myConsumables</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Projects Dashboard</td>
                     <td>
-                        <a href="https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/default.aspx#/facility/projects">
-                            https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/default.aspx#/facility/projects</a>
+                        <a href="https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/projects/dashboard/myProjects">
+                            https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/projects/dashboard/myProjects</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Instruments Dashboard</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/_layouts/ort/{{currentRelease}}/default.aspx#/ort/instruments">
-                            https://ort.ncats.nih.gov/_layouts/ort/{{currentRelease}}/default.aspx#/ort/instruments</a>
+                        <a href="https://ort.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/instruments/dashboard/myInstruments">
+                            https://ort.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/instruments/dashboard/myInstruments</a>
                     </td>
                 </tr>
                 <tr>
@@ -400,21 +400,21 @@
             <h3 class="myHeader">Stemcells</h3>
             <table id="StemcellsTable" class="myTable">
                 <tr>
-                    <td>New Letter of Intent</td>
+                    <td>New Letter of Intent - **GET NEW**</td> <!-- TODO Get new UI Route -->
                     <td>
                         <a href="https://stemcells.ncats.nih.gov/_layouts/ort/{{currentRelease}}/default.aspx#/rnai/intent/new">
                             https://stemcells.ncats.nih.gov/_layouts/ort/{{currentRelease}}/default.aspx#/rnai/intent/new</a>
                     </td>
                 </tr>
                 <tr>
-                    <td>View/Edit Letter of Intent</td>
+                    <td>View/Edit Letter of Intent - **GET NEW**</td> <!-- TODO Get new UI Route -->
                     <td>
                         <a href="https://stemcells.ncats.nih.gov/_layouts/ort/{{currentRelease}}/default.aspx#/rnai/intent/view/{{currentView}}">
                             https://stemcells.ncats.nih.gov/_layouts/ort/{{currentRelease}}/default.aspx#/rnai/intent/view/{{currentView}}</a>
                     </td>
                 </tr>
                 <tr>
-                    <td>View/Edit Full Application</td>
+                    <td>View/Edit Full Application - **GET NEW**</td> <!-- TODO Get new UI Route -->
                     <td>
                         <a href="https://stemcells.ncats.nih.gov/_layouts/ort/{{currentRelease}}/default.aspx#/rnai/fullapplication/view/{{currentView}}">
                             https://stemcells.ncats.nih.gov/_layouts/ort/{{currentRelease}}/default.aspx#/rnai/fullapplication/view/{{currentView}}</a>
@@ -423,22 +423,22 @@
                 <tr>
                     <td>Consumables Dashboard</td>
                     <td>
-                        <a href="https://stemcells.ncats.nih.gov/_layouts/ort/{{currentRelease}}/default.aspx#/rnai/consumables">
-                            https://stemcells.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/consumables</a>
+                        <a href="https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/consumables/dashboard/myConsumables">
+                            https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/consumables/dashboard/myConsumables</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Projects Dashboard</td>
                     <td>
-                        <a href="https://stemcells.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/default.aspx#/facility/projects">
-                            https://stemcells.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/default.aspx#/facility/projects</a>
+                        <a href="https://stemcells.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/projects/dashboard/myProjects">
+                            https://stemcells.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/projects/dashboard/myProjects</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Instruments Dashboard</td>
                     <td>
-                        <a href="https://stemcells.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/default.aspx#/ort/instruments">
-                            https://stemcells.ncats.nih.gov/CoMa/_layouts/ort/{{currentRelease}}/default.aspx#/ort/instruments</a>
+                        <a href="https://stemcells.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/instruments/dashboard/myInstruments">
+                            https://stemcells.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/instruments/dashboard/myInstruments</a>
                     </td>
                 </tr>
                 <tr>

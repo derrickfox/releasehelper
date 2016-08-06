@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+    <script>
+        var app = angular.module('myApp', ['ngMaterial', 'ngMessages']).controller('myController', function ($scope) {
+
+            $scope.items = [1,2,3,4,5];
+            $scope.selected = [1];
+            $scope.toggle = function (item, list) {
+                var idx = list.indexOf(item);
+                if (idx > -1) {
+                    list.splice(idx, 1);
+                }
+                else {
+                    list.push(item);
+                }
+            };
+
+            $scope.exists = function (item, list) {
+                return list.indexOf(item) > -1;
+            };
+
+            $scope.isIndeterminate = function() {
+                return ($scope.selected.length !== 0 &&
+                $scope.selected.length !== $scope.items.length);
+            };
+
+            $scope.isChecked = function() {
+                return $scope.selected.length === $scope.items.length;
+            };
+
+            $scope.toggleAll = function() {
+                if ($scope.selected.length === $scope.items.length) {
+                    $scope.selected = [];
+                } else if ($scope.selected.length === 0 || $scope.selected.length > 0) {
+                    $scope.selected = $scope.items.slice(0);
+                }
+            };
+        });
+    </script>
+    <meta charset="UTF-8">
+    <title>Release Helper</title>
+</head>
+<body ng-controller="myController" class="md-padding demo checkboxdemoSelectAll">
+
+    <div>
+        <div layout="row" layout-wrap="">
+            <div flex="100" layout="column">
+                <div>
+                    <fieldset class="demo-fieldset">
+                        <legend class="demo-legend">Using <md-checkbox> with the 'indeterminate' attribute </legend>
+                        <div layout="row" layout-wrap="" flex="">
+                            <div flex-xs="" flex="50">
+                                <md-checkbox aria-label="Select All" ng-checked="isChecked()" md-indeterminate="isIndeterminate()" ng-click="toggleAll()">
+                                    <span ng-if="isChecked()">Un-</span>Select All
+                                </md-checkbox>
+                            </div>
+                            <div class="demo-select-all-checkboxes" flex="100" ng-repeat="item in items">
+                                <md-checkbox ng-checked="exists(item, selected)" ng-click="toggle(item, selected)" id="checkBox">
+                                    {{ item }}
+                                </md-checkbox>
+                            </div>
+                        </div>
+                        <div>
+                            <md-checkbox id=myId1 value="myValue1">{{items[0]}}</md-checkbox>
+                            <md-checkbox id=myId2 value="myValue2">{{items[1]}}</md-checkbox>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
+-->
+
+</body>
+</html>
