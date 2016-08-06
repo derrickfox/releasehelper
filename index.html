@@ -27,16 +27,13 @@
                 console.log($scope.urlObject);
 
                 if ($scope.day <= 9){
+                    $scope.day = $scope.day - 1;
                     $scope.day = "0" + $scope.day;
+                    $scope.day = String($scope.day);
                     //alert($scope.day);
+                    $scope.currentRelease = $scope.year + "." + String($scope.month) + $scope.day;
+                    alert($scope.currentRelease);
                 }
-            };
-
-
-            $scope.printURLS = function (i) {
-                window.open($scope.testObject.comaDashboard.debugCurrent);
-                window.open($scope.testObject.comaDashboard.debugLast);
-                alert($scope.testObject.comaDashboard.debugCurrent);
             };
         });
     </script>
@@ -72,6 +69,7 @@
         </div>
         <div style="display: inline-block; float: right;">
             <a href="updatePages.html"><md-button class="md-raised">To Update Pages</md-button></a>
+            <a href="listsettings.html"><md-button class="md-raised">To List Settings</md-button></a>
         </div>
         <div>
             <h1>v{{currentRelease}} - Debug</h1>

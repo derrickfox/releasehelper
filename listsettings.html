@@ -1,10 +1,280 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
 
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+    <script>
+        var app = angular.module('myApp', ['ngMaterial', 'ngMessages']).controller('myController', function ($scope) {
+            //$scope.currentRelease = 16.416;
+            //$scope.pastRelease = 16.408;
+            $scope.currentView = 1;
+            $scope.pastView = 1;
+            $scope.today = new Date();
+            $scope.day = $scope.today.getDate();
+            $scope.month = $scope.today.getMonth() + 1;
+            $scope.year = $scope.today.getYear() - 100;
+            $scope.currentRelease = $scope.year + "." + String($scope.month) + String($scope.day - 1);
+            $scope.pastRelease = $scope.year + "." + String($scope.month) + String($scope.day - 2);
+
+
+            $scope.init = function () {
+                console.log($scope.urlObject);
+
+                if ($scope.day <= 9){
+                    $scope.day = $scope.day - 1;
+                    $scope.day = "0" + $scope.day;
+                    $scope.day = String($scope.day);
+                    //alert($scope.day);
+                    $scope.currentRelease = $scope.year + "." + String($scope.month) + $scope.day;
+                    alert($scope.currentRelease);
+                }
+            };
+
+
+            $scope.printURLS = function (i) {
+                window.open($scope.testObject.comaDashboard.debugCurrent);
+                window.open($scope.testObject.comaDashboard.debugLast);
+                alert($scope.testObject.comaDashboard.debugCurrent);
+            };
+        });
+    </script>
+    <style>
+        a {
+            padding-left: 2em;
+            padding-right: 2em;
+        }
+
+        h3 {
+            padding-left: 1em
+        }
+
+        .myTable td, .myTable a{
+            /* border: solid black 1px; */
+            text-align: left;
+            padding-left: 0em;
+        }
+
+        .myTable {
+            padding-left: 1em;
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Release Helper</title>
+</head>
+<body data-ng-controller="myController" data-ng-init="init()">
+<div style="padding: 55px;">
+    <div style="display: inline-block;">
+        <input ng-model="currentRelease" placeholder="Release Version"> Current Release Version<br>
+        <input ng-model="currentView" placeholder="Item Number"> Item Number<br><br>
+    </div>
+    <div style="display: inline-block; float: right;">
+        <a href="index.html"><md-button class="md-raised">To Test Pages</md-button></a>
+        <a href="updatePages.html"><md-button class="md-raised">To Update Pages</md-button></a>
+    </div>
+    <div>
+        <h1>List Settings - v{{currentRelease}}</h1>
+        <h3 class="myHeader" id="testMe">NFS</h3>
+        <table id="NFStable" class="myTable">
+            <tr>
+                <td>NFS Dashboard</td>
+                <td>
+                    Get URL
+                </td>
+            </tr>
+        </table>
+        <h3 class="myHeader">CoMa</h3>
+        <table id="comaTable" class="myTable">
+            <tr>
+                <td>Consumables Dashboard</td>
+                <td>
+                    <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/consumables/settings">
+                        https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/consumables/settings</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Projects Dashboard</td>
+                <td>
+                    <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/projects/settings">
+                        https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/projects/settings</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Instruments Dashboard</td>
+                <td>
+                    <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/settings">
+                        https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/settings</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Samples Dashboard</td>
+                <td>
+                    Get URL
+                </td>
+            </tr>
+            <tr>
+                <td>Freezers Dashboard</td>
+                <td>
+                    Get URL
+                </td>
+            </tr>
+        </table>
+        <h3 class="myHeader">Inventory</h3>
+        <table id="inventoryTable" class="myTable">
+            <tr>
+                <td>Consumables Dashboard</td>
+                <td>
+                    <a href="https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/consumables/settings">
+                        https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/consumables/settings</a>
+                </td>
+            </tr>
+        </table>
+        <h3 class="myHeader">Instrumentation</h3>
+        <table id="instrumentsTable" class="myTable">
+            <tr>
+                <td>Instruments Dashboard</td>
+                <td>
+                    <a href="https://ort.ncats.nih.gov/instrumentation/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/instruments/settings">
+                        https://ort.ncats.nih.gov/instrumentation/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/instruments/settings</a>
+                </td>
+            </tr>
+        </table>
+        <h3 class="myHeader">RNAi</h3>
+        <table id="RNAiTable" class="myTable">
+            <tr>
+                <td>New Letter of Intent - **GET NEW**</td> <!-- TODO Get new UI Route -->
+                <td>
+                    <a href="https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/rnai/intent/new">
+                        https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/new</a>
+                </td>
+            </tr>
+            <tr>
+                <td>View/Edit Letter of Intent - **GET NEW**</td> <!-- TODO Get new UI Route -->
+                <td>
+                    <a href="https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/view/{{currentView}}">
+                        https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/view/{{currentView}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>View/Edit Full Application - **GET NEW**</td> <!-- TODO Get new UI Route -->
+                <td>
+                    <a href="https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/fullapplication/view/{{currentView}}">
+                        https://rnai.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/fullapplication/view/{{currentView}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Consumables Dashboard</td>
+                <td>
+                    <a href="https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/consumables/settings">
+                        https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/consumables/settings</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Projects Dashboard</td>
+                <td>
+                    <a href="https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/projects/settings">
+                        https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/projects/settings</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Instruments Dashboard</td>
+                <td>
+                    <a href="https://ort.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/instruments/settings">
+                        https://ort.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/instruments/settings</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Samples Dashboard</td>
+                <td>
+                    Get URL
+                </td>
+            </tr>
+            <tr>
+                <td>Freezers Dashboard</td>
+                <td>
+                    Get URL
+                </td>
+            </tr>
+        </table>
+        <h3 class="myHeader">Stemcells</h3>
+        <table id="StemcellsTable" class="myTable">
+            <tr>
+                <td>New Letter of Intent - **GET NEW**</td> <!-- TODO Get new UI Route -->
+                <td>
+                    <a href="https://stemcells.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/new">
+                        https://stemcells.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/new</a>
+                </td>
+            </tr>
+            <tr>
+                <td>View/Edit Letter of Intent - **GET NEW**</td> <!-- TODO Get new UI Route -->
+                <td>
+                    <a href="https://stemcells.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/view/{{currentView}}">
+                        https://stemcells.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/intent/view/{{currentView}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>View/Edit Full Application - **GET NEW**</td> <!-- TODO Get new UI Route -->
+                <td>
+                    <a href="https://stemcells.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/fullapplication/view/{{currentView}}">
+                        https://stemcells.ncats.nih.gov/_layouts/ort/{{currentRelease}}/debug/default.aspx#/rnai/fullapplication/view/{{currentView}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Consumables Dashboard</td>
+                <td>
+                    <a href="https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/consumables/settings">
+                        https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/consumables/settings</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Projects Dashboard</td>
+                <td>
+                    <a href="https://stemcells.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/projects/settings">
+                        https://stemcells.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/projects/settings</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Instruments Dashboard</td>
+                <td>
+                    <a href="https://stemcells.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/instruments/settings">
+                        https://stemcells.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/instruments/settings</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Samples Dashboard</td>
+                <td>
+                    Get URL
+                </td>
+            </tr>
+            <tr>
+                <td>Freezers Dashboard</td>
+                <td>
+                    Get URL
+                </td>
+            </tr>
+        </table>
+        <h3 class="myHeader">OSCTR</h3>
+        <table id="OSCTRtable" class="myTable">
+            <tr>
+                <td>Samples Dashboard</td>
+                <td>
+                    Get URL
+                </td>
+            </tr>
+            <tr>
+                <td>Freezers Dashboard</td>
+                <td>
+                    Get URL
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
 </body>
 </html>
