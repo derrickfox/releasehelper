@@ -26,11 +26,10 @@
             $scope.init = function () {
                 console.log($scope.urlObject);
 
-                if ($scope.day <= 9){
+                if ($scope.day <= 10){
                     $scope.day = $scope.day - 1;
                     $scope.day = "0" + $scope.day;
                     $scope.day = String($scope.day);
-                    //alert($scope.day);
                     $scope.currentRelease = $scope.year + "." + String($scope.month) + $scope.day;
                 }
             };
@@ -100,8 +99,8 @@
                 <tr>
                     <td>Instruments Dashboard</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/instruments/myInstruments">
-                            https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/instruments/myInstruments</a>
+                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/instruments/dashboard/myInstruments">
+                            https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/instruments/dashboard/myInstruments</a>
                     </td>
                 </tr>
                 <tr>
@@ -112,6 +111,36 @@
                 </tr>
                 <tr>
                     <td>Freezers Dashboard</td>
+                    <td>
+                        Get URL
+                    </td>
+                </tr>
+                <tr>
+                    <td>Create New Location</td>
+                    <td>
+                        Get URL
+                    </td>
+                </tr>
+                <tr>
+                    <td>Reprint Location Barcodes</td>
+                    <td>
+                        Get URL
+                    </td>
+                </tr>
+                <tr>
+                    <td>Reprint Consumable Barcodes</td>
+                    <td>
+                        Get URL
+                    </td>
+                </tr>
+                <tr>
+                    <td>Check-In Consumables</td>
+                    <td>
+                        Get URL
+                    </td>
+                </tr>
+                <tr>
+                    <td>Check-Out Consumables</td>
                     <td>
                         Get URL
                     </td>
