@@ -91,6 +91,20 @@
         </div>
         <br>
         <input ng-model="currentRelease" placeholder="Release Version"> Current Release Version<br>
+        <h3>Imaging</h3>
+        <table class="myTable">
+            <th>Name</th><th>URL</th><th>Route</th>
+            <tr>
+                <td>Schedule Instruments</td>
+                <td><a href="https://ort.ncats.nih.gov/imaging/Pages/reserveInstruments.aspx" target="_blank">https://ort.ncats.nih.gov/imaging/Pages/reserveInstruments.aspx</a></td>
+                <td>/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/instruments/dashboard/reserveInstruments</td>
+            </tr>
+            <tr>
+                <td>Manage Instruments</td>
+                <td><a href="https://ort.ncats.nih.gov/imaging/Pages/manageInstruments.aspx" target="_blank">https://ort.ncats.nih.gov/imaging/Pages/manageInstruments.aspx</a> </td>
+                <td>/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/instruments/dashboard/myInstruments</td>
+            </tr>
+        </table>
         <h3>NFS</h3>
         <table class="myTable">
             <th>Name</th><th>URL</th><th>Route</th>
@@ -351,29 +365,39 @@
                 <td>/_layouts/ls/{{currentRelease}}/default.aspx#/osctr/donors</td>
             </tr>
             <tr>
-                <td>Check In - **GET NEW**</td> <!-- TODO get new UI-Route -->
+                <td>Check In</td>
                 <td><a href="https://stemcells.ncats.nih.gov/Pages/CheckInOut.aspx" target="_blank">https://stemcells.ncats.nih.gov/Pages/CheckInOut.aspx</a> </td>
-                <td>NEEDED</td>
+                <td>/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/checkIn</td>
             </tr>
             <tr>
-                <td>Check Out - **GET NEW**</td> <!-- TODO get new UI-Route -->
+                <td>Check Out</td>
                 <td><a href="https://stemcells.ncats.nih.gov/Pages/CheckInOut.aspx" target="_blank">https://stemcells.ncats.nih.gov/Pages/CheckInOut.aspx</a> </td>
-                <td>NEEDED</td>
+                <td>/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/checkOut</td>
             </tr>
             <tr>
-                <td>Create New Location - **GET NEW**</td> <!-- TODO get new UI-Route -->
+                <td>Create New Location</td>
                 <td><a href="https://stemcells.ncats.nih.gov/Pages/LocationCreator.aspx" target="_blank">https://stemcells.ncats.nih.gov/Pages/LocationCreator.aspx</a> </td>
-                <td>NEEDED</td>
+                <td>/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/location</td>
             </tr>
             <tr>
-                <td>Reprint Consumable Barcodes - **GET NEW**</td> <!-- TODO get new UI-Route -->
+                <td>Reprint Consumable Barcodes</td>
                 <td><a href="https://stemcells.ncats.nih.gov/Pages/LocationCreator.aspx" target="_blank">https://stemcells.ncats.nih.gov/Pages/LocationCreator.aspx</a> </td>
-                <td>NEEDED</td>
+                <td>/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/barcode/items</td>
             </tr>
             <tr>
-                <td>Reprint Location Barcodes - **GET NEW**</td> <!-- TODO get new UI-Route -->
+                <td>Reprint Location Barcodes</td>
                 <td><a href="https://stemcells.ncats.nih.gov/Pages/LocationCreator.aspx" target="_blank">https://stemcells.ncats.nih.gov/Pages/LocationCreator.aspx</a> </td>
-                <td>NEEDED</td>
+                <td>/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/barcode/locations</td>
+            </tr>
+            <tr>
+                <td>Antibodies Dashboard</td>
+                <td><a href="https://stemcells.ncats.nih.gov/Pages/antibodies.aspx" target="_blank">https://stemcells.ncats.nih.gov/Pages/antibodies.aspx</a> </td>
+                <td>/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/antibodydatabase/dashboard/myAntibodies</td>
+            </tr>
+            <tr>
+                <td>Reagents Dashboard</td>
+                <td><a href="https://stemcells.ncats.nih.gov/Pages/reagents.aspx" target="_blank">https://stemcells.ncats.nih.gov/Pages/reagents.aspx</a> </td>
+                <td>/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/reagentsdatabase/dashboard/myReagents</td>
             </tr>
         </table>
         <h3>OSCTR</h3>
