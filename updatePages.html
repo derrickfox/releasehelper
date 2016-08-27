@@ -25,8 +25,7 @@
             $scope.day = $scope.today.getDate();
             $scope.month = $scope.today.getMonth() + 1;
             $scope.year = $scope.today.getYear() - 100;
-            $scope.currentRelease = $scope.year + "." + String($scope.month) + String($scope.day - 1);
-            $scope.pastRelease = $scope.year + "." + String($scope.month) + String($scope.day - 2);
+            $scope.currentRelease = $scope.year + "." + String($scope.month) + String($scope.day);
 
 
             $scope.init = function () {
@@ -96,8 +95,8 @@
             <th>Name</th><th>URL</th><th>Route</th>
             <tr>
                 <td>Schedule Instruments</td>
-                <td><a href="https://ort.ncats.nih.gov/imaging/Pages/reserveInstruments.aspx" target="_blank">https://ort.ncats.nih.gov/imaging/Pages/reserveInstruments.aspx</a></td>
-                <td>/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/instruments/dashboard/reserveInstruments</td>
+                <td><a href="https://ort.ncats.nih.gov/imaging/Pages/scheduleInstruments.aspx" target="_blank">https://ort.ncats.nih.gov/imaging/Pages/reserveInstruments.aspx</a></td>
+                <td>/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/instruments/dashboard/scheduleInstruments</td>
             </tr>
             <tr>
                 <td>Manage Instruments</td>
