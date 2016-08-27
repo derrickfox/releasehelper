@@ -19,9 +19,7 @@
             $scope.day = $scope.today.getDate();
             $scope.month = $scope.today.getMonth() + 1;
             $scope.year = $scope.today.getYear() - 100;
-            $scope.currentRelease = $scope.year + "." + String($scope.month) + String($scope.day - 1);
-            $scope.pastRelease = $scope.year + "." + String($scope.month) + String($scope.day - 2);
-
+            $scope.currentRelease = $scope.year + "." + String($scope.month) + String($scope.day);
 
             $scope.init = function () {
                 console.log($scope.urlObject);
@@ -96,12 +94,12 @@
                 </tr>
             </table>
             <h3 class="myHeader" id="testM2e">Imaging</h3>
-            <table id="NFStable2" class="myTable">
+            <table class="myTable">
                 <tr>
                     <td>Schedule Instruments</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/imaging/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/instruments/dashboard/reserveInstruments" target="_blank">
-                            https://ort.ncats.nih.gov/imaging/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/instruments/dashboard/reserveInstruments</a>
+                        <a href="https://ort.ncats.nih.gov/imaging/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/instruments/dashboard/scheduleInstruments" target="_blank">
+                            https://ort.ncats.nih.gov/imaging/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/instruments/dashboard/scheduleInstruments</a>
                     </td>
                 </tr>
                 <tr>
@@ -138,8 +136,8 @@
                 <tr>
                     <td>Create New Location</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/inventory/location" target="_blank">
-                            https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/inventory/location</a>
+                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/locations/dashboard/view" target="_blank">
+                            https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/locations/dashboard/view</a>
                     </td>
                 </tr>
                 <tr>
@@ -159,15 +157,15 @@
                 <tr>
                     <td>Check-In Consumables</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/inventory/checkIn" target="_blank">
-                            https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/inventory/checkIn</a>
+                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/checkinout/dashboard/checkin" target="_blank">
+                            https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/checkinout/dashboard/checkin</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Check-Out Consumables</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/inventory/checkOut" target="_blank">
-                            https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/inventory/checkOut</a>
+                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/checkinout/dashboard/checkout" target="_blank">
+                            https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/checkinout/dashboard/checkout</a>
                     </td>
                 </tr>
             </table>
@@ -183,8 +181,8 @@
                 <tr>
                     <td>Create New Location</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/debug/default.aspx#/inventory/location" target="_blank">
-                            https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/debug/default.aspx#/inventory/location</a>
+                        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/locations/dashboard/view" target="_blank">
+                            https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/locations/dashboard/view</a>
                     </td>
                 </tr>
                 <tr>
@@ -204,15 +202,15 @@
                 <tr>
                     <td>Check-In Consumables</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/debug/default.aspx#/inventory/checkIn" target="_blank">
-                            https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/debug/default.aspx#/inventory/checkIn</a>
+                        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/checkinout/dashboard/checkin" target="_blank">
+                            https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/checkinout/dashboard/checkin</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Check-Out Consumables</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/debug/default.aspx#/inventory/checkOut" target="_blank">
-                            https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/debug/default.aspx#/inventory/checkOut</a>
+                        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/checkinout/dashboard/checkout" target="_blank">
+                            https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/checkinout/dashboard/checkout</a>
                     </td>
                 </tr>
             </table>
@@ -273,14 +271,15 @@
                 <tr>
                     <td>Freezers Dashboard</td>
                     <td>
-                        Get URL
+                        <a href="https://rnai.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/Derivatives/dashboard/myDerivatives" target="_blank">
+                            https://rnai.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/Derivatives/dashboard/myDerivatives</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Create New Location</td>
                     <td>
-                        <a href="https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/inventory/location" target="_blank">
-                            https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/inventory/location</a>
+                        <a href="https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/locations/dashboard/view" target="_blank">
+                            https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/locations/dashboard/view</a>
                     </td>
                 </tr>
                 <tr>
@@ -300,15 +299,15 @@
                 <tr>
                     <td>Check-In Consumables</td>
                     <td>
-                        <a href="https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/inventory/checkIn" target="_blank">
-                            https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/inventory/checkIn</a>
+                        <a href="https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/checkinout/dashboard/checkin" target="_blank">
+                            https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/checkinout/dashboard/checkin</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Check-Out Consumables</td>
                     <td>
-                        <a href="https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/inventory/checkOut" target="_blank">
-                            https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/inventory/checkOut</a>
+                        <a href="https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/checkinout/dashboard/checkout" target="_blank">
+                            https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/checkinout/dashboard/checkout</a>
                     </td>
                 </tr>
             </table>
@@ -357,22 +356,17 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Samples Dashboard</td>
-                    <td>
-                        Get URL
-                    </td>
-                </tr>
-                <tr>
                     <td>Freezers Dashboard</td>
                     <td>
-                        Get URL
+                        <a href="https://stemcells.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/Derivatives/dashboard/myDerivatives" target="_blank">
+                            https://stemcells.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/Derivatives/dashboard/myDerivatives</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Create New Location</td>
                     <td>
-                        <a href="https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/inventory/location" target="_blank">
-                            https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/inventory/location</a>
+                        <a href="https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/locations/dashboard/view" target="_blank">
+                            https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/locations/dashboard/view</a>
                     </td>
                 </tr>
                 <tr>
@@ -392,15 +386,15 @@
                 <tr>
                     <td>Check-In Consumables</td>
                     <td>
-                        <a href="https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/inventory/checkIn" target="_blank">
-                            https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/inventory/checkIn</a>
+                        <a href="https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/checkinout/dashboard/checkin" target="_blank">
+                            https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/checkinout/dashboard/checkin</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Check-Out Consumables</td>
                     <td>
-                        <a href="https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/inventory/checkOut" target="_blank">
-                            https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/inventory/checkOut</a>
+                        <a href="https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/checkinout/dashboard/checkout" target="_blank">
+                            https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/checkinout/dashboard/checkout</a>
                     </td>
                 </tr>
                 <tr>
@@ -411,10 +405,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td>Reagents Dashboard</td>
                     <td>
                         <a href="https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/reagentsdatabase/dashboard/myReagents" target="_blank">
-                            https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/reagentsdatabase/dashboard/myReagentst</a>
+                            https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/reagentsdatabase/dashboard/myReagents</a>
                     </td>
                 </tr>
             </table>
@@ -429,7 +423,8 @@
                 <tr>
                     <td>Freezers Dashboard</td>
                     <td>
-                        Get URL
+                        <a href="https://labshare.nih.gov/nei/osctr/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/Derivatives/dashboard/myDerivatives" target="_blank">
+                            https://labshare.nih.gov/nei/osctr/_layouts/ls/{{currentRelease}}/debug/default.aspx#/facility/list/Derivatives/dashboard/myDerivatives</a>
                     </td>
                 </tr>
             </table>
@@ -463,6 +458,23 @@
                     </td>
                 </tr>
             </table>
+            <h3 class="myHeader" id="testM2e">Imaging</h3>
+            <table id="NFStable2" class="myTable">
+                <tr>
+                    <td>Schedule Instruments</td>
+                    <td>
+                        <a href="https://ort.ncats.nih.gov/imaging/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/instruments/dashboard/scheduleInstruments" target="_blank">
+                            https://ort.ncats.nih.gov/imaging/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/instruments/dashboard/scheduleInstruments</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Manage Instruments</td>
+                    <td>
+                        <a href="https://ort.ncats.nih.gov/imaging/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/instruments/dashboard/myInstruments" target="_blank">
+                            https://ort.ncats.nih.gov/imaging/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/instruments/dashboard/myInstruments</a>
+                    </td>
+                </tr>
+            </table>
             <h3 class="myHeader">CoMa</h3>
             <table id="comaTable" class="myTable">
                 <tr>
@@ -489,8 +501,8 @@
                 <tr>
                     <td>Create New Location</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/location" target="_blank">
-                            https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/location</a>
+                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/locations/dashboard/view" target="_blank">
+                            https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/locations/dashboard/view</a>
                     </td>
                 </tr>
                 <tr>
@@ -510,15 +522,15 @@
                 <tr>
                     <td>Check-In Consumables</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/checkIn" target="_blank">
-                            https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/checkIn</a>
+                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/checkinout/dashboard/checkin" target="_blank">
+                            https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/checkinout/dashboard/checkin</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Check-Out Consumables</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/checkOut" target="_blank">
-                            https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/checkOut</a>
+                        <a href="https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/checkinout/dashboard/checkout" target="_blank">
+                            https://ort.ncats.nih.gov/CoMa/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/checkinout/dashboard/checkout</a>
                     </td>
                 </tr>
             </table>
@@ -534,8 +546,8 @@
                 <tr>
                     <td>Create New Location</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/location" target="_blank">
-                            https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/location</a>
+                        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/locations/dashboard/view" target="_blank">
+                            https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/locations/dashboard/view</a>
                     </td>
                 </tr>
                 <tr>
@@ -555,15 +567,15 @@
                 <tr>
                     <td>Check-In Consumables</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/checkIn" target="_blank">
-                            https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/checkIn</a>
+                        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/checkinout/dashboard/checkin" target="_blank">
+                            https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/checkinout/dashboard/checkin</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Check-Out Consumables</td>
                     <td>
-                        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/checkOut" target="_blank">
-                            https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/checkOut</a>
+                        <a href="https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/checkinout/dashboard/checkout" target="_blank">
+                            https://ort.ncats.nih.gov/inventory/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/checkinout/dashboard/checkout</a>
                     </td>
                 </tr>
             </table>
@@ -624,14 +636,15 @@
                 <tr>
                     <td>Freezers Dashboard</td>
                     <td>
-                        Get URL
+                        <a href="https://rnai.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/Derivatives/dashboard/myDerivatives" target="_blank">
+                            https://rnai.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/Derivatives/dashboard/myDerivatives</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Create New Location</td>
                     <td>
-                        <a href="https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/location" target="_blank">
-                            https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/location</a>
+                        <a href="https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/locations/dashboard/view" target="_blank">
+                            https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/locations/dashboard/view</a>
                     </td>
                 </tr>
                 <tr>
@@ -651,15 +664,15 @@
                 <tr>
                     <td>Check-In Consumables</td>
                     <td>
-                        <a href="https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/checkIn" target="_blank">
-                            https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/checkIn</a>
+                        <a href="https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/checkinout/dashboard/checkin" target="_blank">
+                            https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/checkinout/dashboard/checkin</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Check-Out Consumables</td>
                     <td>
-                        <a href="https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/checkOut" target="_blank">
-                            https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/checkOut</a>
+                        <a href="https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/checkinout/dashboard/checkout" target="_blank">
+                            https://rnai.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/checkinout/dashboard/checkout</a>
                     </td>
                 </tr>
             </table>
@@ -708,22 +721,17 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Samples Dashboard</td>
-                    <td>
-                        Get URL
-                    </td>
-                </tr>
-                <tr>
                     <td>Freezers Dashboard</td>
                     <td>
-                        Get URL
+                        <a href="https://stemcells.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/Derivatives/dashboard/myDerivatives" target="_blank">
+                            https://stemcells.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/Derivatives/dashboard/myDerivatives</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Create New Location</td>
                     <td>
-                        <a href="https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/location" target="_blank">
-                            https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/location</a>
+                        <a href="https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/locations/dashboard/view" target="_blank">
+                            https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/locations/dashboard/view</a>
                     </td>
                 </tr>
                 <tr>
@@ -743,15 +751,15 @@
                 <tr>
                     <td>Check-In Consumables</td>
                     <td>
-                        <a href="https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/checkIn" target="_blank">
-                            https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/checkIn</a>
+                        <a href="https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/checkinout/dashboard/checkin" target="_blank">
+                            https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/checkinout/dashboard/checkin</a>
                     </td>
                 </tr>
                 <tr>
                     <td>Check-Out Consumables</td>
                     <td>
-                        <a href="https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/checkOut" target="_blank">
-                            https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/inventory/checkOut</a>
+                        <a href="https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/checkinout/dashboard/checkout" target="_blank">
+                            https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/checkinout/dashboard/checkout</a>
                     </td>
                 </tr>
                 <tr>
@@ -762,7 +770,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td>Reagents Dashboard</td>
                     <td>
                         <a href="https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/reagentsdatabase/dashboard/myReagents" target="_blank">
                             https://stemcells.ncats.nih.gov/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/reagentsdatabase/dashboard/myReagentst</a>
@@ -780,7 +788,8 @@
                 <tr>
                     <td>Freezers Dashboard</td>
                     <td>
-                        Get URL
+                        <a href="https://labshare.nih.gov/nei/osctr/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/Derivatives/dashboard/myDerivatives" target="_blank">
+                            https://labshare.nih.gov/nei/osctr/_layouts/ls/{{currentRelease}}/default.aspx#/facility/list/Derivatives/dashboard/myDerivatives</a>
                     </td>
                 </tr>
             </table>
