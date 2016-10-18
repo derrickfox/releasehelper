@@ -1,4 +1,4 @@
-#Scheduling Instruments Dashboard List Settings Configuration
+#Scheduling Instrumentation Setup Guide 
 
 A scheduling instruments dashboard is a more specific version of a <a href="https://github.com/LabShare/facility/blob/master/docs/dashboard-readme.md">LabShare dashboard</a>. These dashboards tend to follow similar layout and styling. 
 The typical elements of an scheduling instruments dashboard are as follows:
@@ -16,9 +16,12 @@ The typical elements of an scheduling instruments dashboard are as follows:
     * "month" : Each day is a cell in this traditional calendar view. User selects the instrument and times from the resulting form.
 4.  Title of the dashboard on the top of the calendar view. 
 
-##Keys Defined
+##Calendar Dashboard's List Settings Configuration
+
+Instruments list's settings : `<host URL>/_layouts/ls/<release version>/debug/default.aspx#/facility/list/<instruments list name>/settings` 
+
         "dashboards" : {
-            "myInstruments": {                                                                       // Name your dashboard what ever name you like. Should describe the dashboad.
+            "mySchedule": {                                                                            // Name your dashboard what ever name you like. Should describe the dashboard.
               "name": {…},
               "title": {…},
               "route": {…},
@@ -27,38 +30,38 @@ The typical elements of an scheduling instruments dashboard are as follows:
                    "searchPanel" : {...},
                    "instrumentPanel" : {...},
                    "Filter" : {...},
-                   "calendarPanel" : {
-                        "title" : "Calendar",
-                        "type" : "ls-schedule",
+                   "calendarPanel" : {                                                                // This panel is required. It is what differenciates a scheduling dashboard from any other type of dashboard.
+                        "title" : "Calendar",                                                         // This is the text that will appear on the top of the dashboard.
+                        "type" : "ls-schedule",                                                       // Tells the page which LabShare directive will be used.
                         "options" : {
-                             "calendarView" : {
+                             "calendarView" : {                                                       // Defines the properties of how the calendar view will be displayed to the user.
                                   "list" : {
-                                       "listName" : "Reservations",
-                                       "viewName" : "All Events",
-                                       "startTimeLabelName" : "EventDate",
-                                       "endTimeLabelName" : "EndDate",
-                                       "allDayLabelName" : "All Day Event"
+                                       "listName" : "Reservations",                                   // This is the internal name of the SharePoint list where the reservations will be saved and retrived. 
+                                       "viewName" : "All Events",                                     // This is the specific name of the view in your list. Different views will contain different content.
+                                       "startTimeLabelName" : "EventDate",                            // Internal name of the column from the SharePoint list. Stores the date and time of the reservation's start time. 
+                                       "endTimeLabelName" : "EndDate",                                // Internal name of the column from the SharePoint list. Stores the date and time of the reservation's end time. 
+                                       "allDayLabelName" : "All Day Event"                            // Internal name of the column from the SharePoint list that stores the boolean value of whether or not the reservation is an all day event.
                                   },
-                                  "groupLabelName" : "Instrument",
-                                  "defaultCalendarView" : "timelineThreeDays",
-                                  "minTime" : 08:00,
-                                  "maxTime" : 19:00,
-                                  "height" : 900,
-                                  "cellHeight" : (empty)
+                                  "groupLabelName" : "Instrument",                                    //
+                                  "defaultCalendarView" : "timelineThreeDays",                        // This determines the default view for the calendar panel.
+                                  "minTime" : 08:00,                                                  // The earliest time of the day to which a user can make a reservation.
+                                  "maxTime" : 19:00,                                                  // The latest time of the day to which a user can make a reservation.
+                                  "height" : 900,                                                     // The amount of pixels each instrument-row will be.
+                                  "cellHeight" : (empty)                                              // 
                              },
                              "resourceList" : {
-                                  "listName" : "Instruments",
-                                  "viewName" : "myView"
+                                  "listName" : "Instruments",                                         // This is the internal name of the SharePoint list that will be used to populate the list of instruments featured in the calendar panel.
+                                  "viewName" : "myView"                                               // The specific view within the SharePoint list that will be used to populate the calendar panel.
                              },
-                             "resourceLabelText" : "Instruments",
+                             "resourceLabelText" : "Instruments",                                     // 
                              "modal" : {
-                                  "type" : "SP",
-                                  "host" : "http://ort.ncats.nih.gov",
-                                  "newEvent" : {
+                                  "type" : "SP",                                                      // This is the type of form that will populate when the user makes a reservation. "SP" will populate the AxleLabs version of the form. "form2" will populate the AngularJS version of the form.
+                                  "host" : "http://ort.ncats.nih.gov",                                // This is the host that hosts the directives need to make the functionality work properly.
+                                  "newEvent" : {                                                      // This points to the "new form" that should be used for this scheduler.
                                        "pathname" : 
                                             "/instrumentation/Lists/Reservations/NewForm.aspx"
                                   },
-                                  "viewEvent" : {
+                                  "viewEvent" : {                                                     // This points to the "view/edit form" that should be used for this scheduler.
                                        "pathname" : 
                                             "/instrumentation/Lists/Reservations/DispForm.aspx"
                                   }
