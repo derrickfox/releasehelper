@@ -15,3 +15,57 @@ The typical elements of an scheduling instruments dashboard are as follows:
     * "week" : Each hour is a represented by a row (y-axis) and the columns are the days (x-axis). User selects the instrument and times from the resulting form. 
     * "month" : Each day is a cell in this traditional calendar view. User selects the instrument and times from the resulting form.
 4.  Title of the dashboard on the top of the calendar view. 
+
+##Keys Defined
+        "dashboards" : {
+            "myInstruments": {                                                                       // Name your dashboard what ever name you like. Should describe the dashboad.
+              "name": {…},
+              "title": {…},
+              "route": {…},
+              "data": {…},
+              "panels": {
+                   "searchPanel" : {...},
+                   "instrumentPanel" : {...},
+                   "Filter" : {...},
+                   "calendarPanel" : {
+                        "title" : "Calendar",
+                        "type" : "ls-schedule",
+                        "options" : {
+                             "calendarView" : {
+                                  "list" : {
+                                       "listName" : "Reservations",
+                                       "viewName" : "All Events",
+                                       "startTimeLabelName" : "EventDate",
+                                       "endTimeLabelName" : "EndDate",
+                                       "allDayLabelName" : "All Day Event"
+                                  },
+                                  "groupLabelName" : "Instrument",
+                                  "defaultCalendarView" : "timelineThreeDays",
+                                  "minTime" : 08:00,
+                                  "maxTime" : 19:00,
+                                  "height" : 900,
+                                  "cellHeight" : (empty)
+                             },
+                             "resourceList" : {
+                                  "listName" : "Instruments",
+                                  "viewName" : "myView"
+                             },
+                             "resourceLabelText" : "Instruments",
+                             "modal" : {
+                                  "type" : "SP",
+                                  "host" : "http://ort.ncats.nih.gov",
+                                  "newEvent" : {
+                                       "pathname" : 
+                                            "/instrumentation/Lists/Reservations/NewForm.aspx"
+                                  },
+                                  "viewEvent" : {
+                                       "pathname" : 
+                                            "/instrumentation/Lists/Reservations/DispForm.aspx"
+                                  }
+                             }
+                        }
+                   }
+              },
+              "layout" : {...}
+        },
+        "forms" : {...} 
